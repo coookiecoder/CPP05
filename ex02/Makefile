@@ -1,7 +1,7 @@
 CC=c++
 CFLAGS= -std=c++98 -Wall -Werror -Wextra
 
-OBJ=Bureaucrat.o Form.o main.o
+OBJ=Bureaucrat.o AForm.o ShrubberyCreationForm.o RobotomyRequestForm.o PresidentialPardonForm.o main.o
 NAME=Bureaucrat
 
 all: $(NAME)

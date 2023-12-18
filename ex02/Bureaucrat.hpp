@@ -7,7 +7,7 @@
 # include <string>
 # include <iostream>
 
-class Form;
+class AForm;
 
 class Bureaucrat {
 	private:

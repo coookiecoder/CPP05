@@ -23,7 +23,7 @@ class AForm {
 		bool getSigned(void) const;
 		int getGradeSign(void) const;
 		int getGradeExecute(void) const;
-		virtual void execute(void) = 0;
+		virtual void execute(std::string target) = 0;
 
 	public:
 	    class GradeTooHighException : public std::exception {
@@ -37,6 +37,6 @@ class AForm {
 	    };
 };
 
-std::ostream &operator<<(std::ostream &output, Form const &input);
+std::ostream &operator<<(std::ostream &output, AForm const &input);
 
 #endif

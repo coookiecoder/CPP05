@@ -1,5 +1,7 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 #include <iostream>
 
 int main(void)
@@ -10,23 +12,36 @@ int main(void)
 	std::cout << Bureaucrat1 << std::endl;
 	std::cout << Bureaucrat2 << std::endl;
 
-	Form Form1("FormA", 100, 90);
-	Form Form2("FormB", 100, 90);
-	Form Form3("FormC", 100, 90);
+	ShrubberyCreationForm Form1;
+	ShrubberyCreationForm Form2;
+	ShrubberyCreationForm Form3;
 
-	Form1.beSigned(Bureaucrat1);
 	Form1.beSigned(Bureaucrat2);
-	Form3.beSigned(Bureaucrat1);
+	Form2.beSigned(Bureaucrat1);
 
 	std::cout << Form1 << std::endl;
 	std::cout << Form2 << std::endl;
 	std::cout << Form3 << std::endl;
 
-	Bureaucrat2.signedForm(Form2);
-	Bureaucrat2.signedForm(Form2);
-	Bureaucrat1.signedForm(Form3);
+	RobotomyRequestForm Form4;
+	RobotomyRequestForm Form5;
+	RobotomyRequestForm Form6;
 
-	std::cout << Form1 << std::endl;
-	std::cout << Form2 << std::endl;
-	std::cout << Form3 << std::endl;
+	Form4.beSigned(Bureaucrat2);
+	Form4.beSigned(Bureaucrat1);
+
+	std::cout << Form4 << std::endl;
+	std::cout << Form5 << std::endl;
+	std::cout << Form6 << std::endl;
+
+	PresidentialPardonForm Form7;
+	PresidentialPardonForm Form8;
+	PresidentialPardonForm Form9;
+
+	Form7.beSigned(Bureaucrat2);
+	Form7.beSigned(Bureaucrat1);
+
+	std::cout << Form7 << std::endl;
+	std::cout << Form8 << std::endl;
+	std::cout << Form9 << std::endl;
 }
