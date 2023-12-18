@@ -1,3 +1,6 @@
+#ifndef BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
+
 #include <ostream>
 #include <stdexcept>
 #include <string>
@@ -29,3 +32,5 @@ class Bureaucrat {
 };
 
 std::ostream &operator<<(std::ostream &output, Bureaucrat const &input);
+
+#endif
