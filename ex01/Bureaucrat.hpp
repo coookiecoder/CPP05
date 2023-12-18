@@ -1,10 +1,13 @@
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
-#include <ostream>
-#include <stdexcept>
-#include <string>
-#include <iostream>
+# include "Form.hpp"
+# include <ostream>
+# include <stdexcept>
+# include <string>
+# include <iostream>
+
+class Form;
 
 class Bureaucrat {
 	private:
@@ -18,6 +21,7 @@ class Bureaucrat {
 		~Bureaucrat(void);
     	const std::string & getName(void) const;
 	    int getGrade(void) const;
+		void signedFormat(Form &form);
 
 	public:
 	    class GradeTooHighException : public std::exception {

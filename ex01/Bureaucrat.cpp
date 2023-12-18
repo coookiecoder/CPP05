@@ -59,6 +59,18 @@ int Bureaucrat::getGrade() const {
 	return grade;
 }
 
+void Bureaucrat::signedFormat(Form &form) {
+	if (form.getSigned())
+		std::cout << this->name << " couldn't sign " << form.getName() << " because form already signed" << std::endl;
+	else {
+		form.beSigned(*this);
+		if (form.getSigned())
+			std::cout << this->name << " signed " << form.getName() << std::endl;
+		else
+			std::cout << this->name << " couldn't sign " << form.getName() << " because grade too low" << std::endl;
+	}
+}
+
 std::ostream &operator<<(std::ostream &output, Bureaucrat const &input) {
 	output << input.getName() << ", bureaucrat grade " << input.getGrade();
 	return output;

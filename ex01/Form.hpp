@@ -1,8 +1,10 @@
 #ifndef FORM_HPP
 # define FORM_HPP
 
-#include "Bureaucrat.hpp"
+# include "Bureaucrat.hpp"
 # include <string>
+
+class Bureaucrat;
 
 class Form {
 	private:

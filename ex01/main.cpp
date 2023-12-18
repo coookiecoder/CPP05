@@ -21,4 +21,12 @@ int main(void)
 	std::cout << Form1 << std::endl;
 	std::cout << Form2 << std::endl;
 	std::cout << Form3 << std::endl;
+
+	Bureaucrat2.signedFormat(Form2);
+	Bureaucrat2.signedFormat(Form2);
+	Bureaucrat1.signedFormat(Form3);
+
+	std::cout << Form1 << std::endl;
+	std::cout << Form2 << std::endl;
+	std::cout << Form3 << std::endl;
 }
