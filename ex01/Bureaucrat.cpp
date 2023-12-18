@@ -59,7 +59,7 @@ int Bureaucrat::getGrade() const {
 	return grade;
 }
 
-void Bureaucrat::signedFormat(Form &form) {
+void Bureaucrat::signedForm(Form &form) {
 	if (form.getSigned())
 		std::cout << this->name << " couldn't sign " << form.getName() << " because form already signed" << std::endl;
 	else {
