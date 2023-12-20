@@ -1,4 +1,5 @@
 #include "RobotomyRequestForm.hpp"
+#include <cstdlib>
 
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm &copy) : AForm(copy) {
 	this->target = copy.target;
@@ -13,5 +14,28 @@ RobotomyRequestForm::~RobotomyRequestForm() {
 }
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor) {
-	std::cout << target << std::endl;
+	try {
+		if (!this->getSigned())
+			throw Bureaucrat::NotSigned();
+		else if (executor.getGrade() <= this->getGradeExecute())
+		{
+			srand(time(0));
+			int success = rand() % 2;
+
+			if (success) {
+			    std::cout << this->target << " has been robotomized successfully.\n";
+			}
+			else {
+				std::cout << this->target << " robotomy failed.\n";
+			}
+		}
+		else
+			throw GradeTooLowException();
+	}
+	catch (const GradeTooLowException& e) {
+		std::cerr << "GradeTooLowException: " << e.what() << '\n';
+	}
+	catch (const Bureaucrat::NotSigned& e) {
+		std::cerr << "NotSigned: " << e.what() << '\n';
+	}
 }

@@ -12,6 +12,10 @@ const char * Bureaucrat::GradeTooLowException::what() const throw() {
 	return "Grade is too low!";
 }
 
+const char * Bureaucrat::NotSigned::what() const throw() {
+	return "Form is not signed!";
+}
+
 Bureaucrat::Bureaucrat(const std::string & name, int grade) : name(name), grade(grade) {
 	try {
 		if (grade < 1)
