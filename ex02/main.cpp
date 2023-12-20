@@ -23,6 +23,10 @@ int main(void)
 	Form1.execute(Bureaucrat2);
 	Form2.execute(Bureaucrat2);
 
+	Bureaucrat1.executeForm(Form1);
+	Bureaucrat2.executeForm(Form1);
+	Bureaucrat2.executeForm(Form2);
+
 	std::cout << Form1 << std::endl;
 	std::cout << Form2 << std::endl;
 	std::cout << Form3 << std::endl;
@@ -38,6 +42,10 @@ int main(void)
 	Form4.execute(Bureaucrat2);
 	Form5.execute(Bureaucrat2);
 
+	Bureaucrat1.executeForm(Form4);
+	Bureaucrat2.executeForm(Form4);
+	Bureaucrat2.executeForm(Form5);
+
 	std::cout << Form4 << std::endl;
 	std::cout << Form5 << std::endl;
 	std::cout << Form6 << std::endl;
@@ -52,6 +60,10 @@ int main(void)
 	Form7.execute(Bureaucrat1);
 	Form7.execute(Bureaucrat2);
 	Form8.execute(Bureaucrat2);
+
+	Bureaucrat1.executeForm(Form7);
+	Bureaucrat2.executeForm(Form7);
+	Bureaucrat2.executeForm(Form8);
 
 	std::cout << Form7 << std::endl;
 	std::cout << Form8 << std::endl;
