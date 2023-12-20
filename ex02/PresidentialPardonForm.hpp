@@ -4,11 +4,13 @@
 # include "AForm.hpp"
 
 class PresidentialPardonForm : public AForm {
+	private:
+		std::string target;
     public:
         PresidentialPardonForm(PresidentialPardonForm &copy);
-        PresidentialPardonForm(void);
+        PresidentialPardonForm(std::string target);
         ~PresidentialPardonForm(void);
-        void execute(std::string target);
+        void execute(Bureaucrat const &executor);
 };
 
 #endif

@@ -4,11 +4,13 @@
 # include "AForm.hpp"
 
 class RobotomyRequestForm : public AForm {
+	private:
+		std::string target;
     public: 
         RobotomyRequestForm(RobotomyRequestForm &copy); 
-        RobotomyRequestForm(void); 
+        RobotomyRequestForm(std::string target); 
         ~RobotomyRequestForm(void); 
-        void execute(std::string target); 
+        void execute(Bureaucrat const &executor);
 };
 
 #endif
