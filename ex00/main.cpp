@@ -36,4 +36,11 @@ int main(void)
 	} catch (std::exception &error) {
 		std::cout << error.what() << std::endl;
 	}
+
+	try {
+		Bureaucrat Bureaucrat4("Timmy", 1);
+		Bureaucrat4.incrementGrade();
+	} catch (std::exception &error) {
+		std::cout << error.what() << std::endl;
+	}
 }
