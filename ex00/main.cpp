@@ -13,6 +13,27 @@ int main(void)
 	std::cout << Bureaucrat2 << std::endl;
 	std::cout << Bureaucrat3 << std::endl;
 
-	Bureaucrat Bureaucrat4("Timmy", 500);
-	Bureaucrat Bureaucrat5("Timmy", 0);
+
+	try {
+		Bureaucrat Bureaucrat4("Timmy", 500);
+	} catch (std::exception &error) {
+		std::cout << error.what() << std::endl;
+	}
+
+	try {
+		Bureaucrat Bureaucrat4("Timmy", 0);
+	} catch (std::exception &error) {
+		std::cout << error.what() << std::endl;
+	}
+
+	Bureaucrat1.incrementGrade();
+	std::cout << Bureaucrat1 << std::endl;
+	Bureaucrat1.decrementGrade();
+	std::cout << Bureaucrat1 << std::endl;
+
+	try {
+		Bureaucrat1.decrementGrade();
+	} catch (std::exception &error) {
+		std::cout << error.what() << std::endl;
+	}
 }
