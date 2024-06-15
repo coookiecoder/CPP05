@@ -9,34 +9,18 @@ const char * Form::GradeTooLowException::what() const throw() {
 }
 
 Form::Form(std::string name, int gradeToSign, int gradeToExecute) : name(name), gradeRequiredToSign(gradeToSign), gradeRequiredToExecute(gradeToExecute) {
-	try {
-		if (gradeRequiredToSign < 1 || gradeRequiredToExecute < 1)
-			throw Bureaucrat::GradeTooHighException();
-		else if (gradeRequiredToSign > 150 || gradeRequiredToExecute > 150)
-			throw Bureaucrat::GradeTooLowException();
-	}
-	catch (const GradeTooHighException& e) {
-		std::cerr << "GradeTooHighException: " << e.what() << '\n';
-	}
-	catch (const GradeTooLowException& e) {
-		std::cerr << "GradeTooLowException: " << e.what() << '\n';
-	}
+	if (gradeRequiredToSign < 1 || gradeRequiredToExecute < 1)
+		throw Bureaucrat::GradeTooHighException();
+	else if (gradeRequiredToSign > 150 || gradeRequiredToExecute > 150)
+		throw Bureaucrat::GradeTooLowException();
 	this->isSigned = false;
 }
 
 Form::Form(const Form &src) : name(src.name), gradeRequiredToSign(src.gradeRequiredToSign), gradeRequiredToExecute(src.gradeRequiredToExecute) {
-	try {
-		if (gradeRequiredToSign < 1 || gradeRequiredToExecute < 1)
-			throw Bureaucrat::GradeTooHighException();
-		else if (gradeRequiredToSign > 150 || gradeRequiredToExecute > 150)
-			throw Bureaucrat::GradeTooLowException();
-	}
-	catch (const GradeTooHighException& e) {
-		std::cerr << "GradeTooHighException: " << e.what() << '\n';
-	}
-	catch (const GradeTooLowException& e) {
-		std::cerr << "GradeTooLowException: " << e.what() << '\n';
-	}
+	if (gradeRequiredToSign < 1 || gradeRequiredToExecute < 1)
+		throw Bureaucrat::GradeTooHighException();
+	else if (gradeRequiredToSign > 150 || gradeRequiredToExecute > 150)
+		throw Bureaucrat::GradeTooLowException();
 	this->isSigned = src.isSigned;
 }
 
@@ -50,15 +34,10 @@ Form::~Form() {
 }
 
 void Form::beSigned(Bureaucrat bureaucrat) {
-	try {
-		if (bureaucrat.getGrade() > gradeRequiredToSign)
-			throw Form::GradeTooLowException();
-		else
-			this->isSigned = true;
-	}
-	catch (const GradeTooLowException& e) {
-		std::cerr << "GradeTooLowException: " << e.what() << '\n';
-	}
+	if (bureaucrat.getGrade() > gradeRequiredToSign)
+		throw Form::GradeTooLowException();
+	else
+		this->isSigned = true;
 }
 
 std::string Form::getName(void) const{

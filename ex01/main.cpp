@@ -14,17 +14,45 @@ int main(void)
 	Form Form2("FormB", 100, 90);
 	Form Form3("FormC", 100, 90);
 
-	Form1.beSigned(Bureaucrat1);
-	Form1.beSigned(Bureaucrat2);
-	Form3.beSigned(Bureaucrat1);
+	try {
+		Form1.beSigned(Bureaucrat1);
+	} catch (std::exception &error) {
+		std::cerr << error.what() << std::endl;
+	}
+
+	try {
+		Form1.beSigned(Bureaucrat2);
+	} catch (std::exception &error) {
+		std::cerr << error.what() << std::endl;
+	}
+
+	try {
+		Form3.beSigned(Bureaucrat1);
+	} catch (std::exception &error) {
+		std::cerr << error.what() << std::endl;
+	}
 
 	std::cout << Form1 << std::endl;
 	std::cout << Form2 << std::endl;
 	std::cout << Form3 << std::endl;
 
-	Bureaucrat2.signedForm(Form2);
-	Bureaucrat2.signedForm(Form2);
-	Bureaucrat1.signedForm(Form3);
+	try {
+		Bureaucrat2.signedForm(Form2);
+	} catch (std::exception &error) {
+		std::cerr << error.what() << std::endl;
+	}
+
+	try {
+		Bureaucrat2.signedForm(Form2);
+	} catch (std::exception &error) {
+		std::cerr << error.what() << std::endl;
+	}
+
+	try {
+		Bureaucrat1.signedForm(Form3);
+	} catch (std::exception &error) {
+		std::cerr << error.what() << std::endl;
+	}
 
 	std::cout << Form1 << std::endl;
 	std::cout << Form2 << std::endl;

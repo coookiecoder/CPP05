@@ -13,33 +13,17 @@ const char * Bureaucrat::GradeTooLowException::what() const throw() {
 }
 
 Bureaucrat::Bureaucrat(const std::string & name, int grade) : name(name), grade(grade) {
-	try {
-		if (grade < 1)
-			throw Bureaucrat::GradeTooHighException();
-		else if (grade > 150)
-			throw Bureaucrat::GradeTooLowException();
-	}
-	catch (const GradeTooHighException& e) {
-		std::cerr << "GradeTooHighException: " << e.what() << '\n';
-	}
-	catch (const GradeTooLowException& e) {
-		std::cerr << "GradeTooLowException: " << e.what() << '\n';
-	}
+	if (grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	else if (grade > 150)
+		throw Bureaucrat::GradeTooLowException();
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat &copy) : name(copy.getName()), grade(copy.getGrade()) {
-	try {
-		if (grade < 1)
-			throw Bureaucrat::GradeTooHighException();
-		else if (grade > 150)
-			throw Bureaucrat::GradeTooLowException();
-	}
-	catch (const GradeTooHighException& e) {
-		std::cerr << "GradeTooHighException: " << e.what() << '\n';
-	}
-	catch (const GradeTooLowException& e) {
-		std::cerr << "GradeTooLowException: " << e.what() << '\n';
-	}
+	if (grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	else if (grade > 150)
+		throw Bureaucrat::GradeTooLowException();
 }
 
 Bureaucrat & Bureaucrat::operator=(Bureaucrat &copy) {
@@ -57,6 +41,20 @@ const std::string & Bureaucrat::getName() const {
 
 int Bureaucrat::getGrade() const {
 	return grade;
+}
+
+void Bureaucrat::incrementGrade() {
+	if (grade == 1)
+		throw Bureaucrat::GradeTooHighException();
+	else
+		grade--;
+}
+
+void Bureaucrat::decrementGrade() {
+	if (grade == 150)
+		throw Bureaucrat::GradeTooLowException();
+	else
+		grade++;
 }
 
 void Bureaucrat::signedForm(Form &form) {
