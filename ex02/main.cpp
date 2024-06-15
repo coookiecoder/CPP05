@@ -16,16 +16,48 @@ int main(void)
 	ShrubberyCreationForm Form2("house2");
 	ShrubberyCreationForm Form3("house3");
 
-	Form1.beSigned(Bureaucrat2);
-	Form2.beSigned(Bureaucrat1);
+	try {
+		Form1.beSigned(Bureaucrat2);
+	} catch (std::exception &error) {
+		std::cout << error.what() << std::endl;
+	}
+	try {
+		Form2.beSigned(Bureaucrat1);
+	} catch (std::exception &error) {
+		std::cout << error.what() << std::endl;
+	}
 
-	Form1.execute(Bureaucrat1);
-	Form1.execute(Bureaucrat2);
-	Form2.execute(Bureaucrat2);
+	try {
+		Form1.execute(Bureaucrat1);
+	} catch (std::exception &error) {
+		std::cout << error.what() << std::endl;
+	}
+	try {
+		Form1.execute(Bureaucrat2);
+	} catch (std::exception &error) {
+		std::cout << error.what() << std::endl;
+	}
+	try {
+		Form2.execute(Bureaucrat2);
+	} catch (std::exception &error) {
+		std::cout << error.what() << std::endl;
+	}
 
-	Bureaucrat1.executeForm(Form1);
-	Bureaucrat2.executeForm(Form1);
-	Bureaucrat2.executeForm(Form2);
+	try {
+		Bureaucrat1.executeForm(Form1);
+	} catch (std::exception &error) {
+		std::cout << error.what() << std::endl;
+	}
+	try {
+		Bureaucrat2.executeForm(Form1);
+	} catch (std::exception &error) {
+		std::cout << error.what() << std::endl;
+	}
+	try {
+		Bureaucrat2.executeForm(Form2);
+	} catch (std::exception &error) {
+		std::cout << error.what() << std::endl;
+	}
 
 	std::cout << Form1 << std::endl;
 	std::cout << Form2 << std::endl;
@@ -35,16 +67,48 @@ int main(void)
 	RobotomyRequestForm Form5("idiot2");
 	RobotomyRequestForm Form6("idiot3");
 
-	Form4.beSigned(Bureaucrat2);
-	Form4.beSigned(Bureaucrat1);
+	try {
+		Form4.beSigned(Bureaucrat2);
+	} catch (std::exception &error) {
+		std::cout << error.what() << std::endl;
+	}
+	try {
+		Form4.beSigned(Bureaucrat1);
+	} catch (std::exception &error) {
+		std::cout << error.what() << std::endl;
+	}
 
-	Form4.execute(Bureaucrat1);
-	Form4.execute(Bureaucrat2);
-	Form5.execute(Bureaucrat2);
+	try {
+		Form4.execute(Bureaucrat1);
+	} catch (std::exception &error) {
+		std::cout << error.what() << std::endl;
+	}
+	try {
+		Form4.execute(Bureaucrat2);
+	} catch (std::exception &error) {
+		std::cout << error.what() << std::endl;
+	}
+	try {
+		Form5.execute(Bureaucrat2);
+	} catch (std::exception &error) {
+		std::cout << error.what() << std::endl;
+	}
 
-	Bureaucrat1.executeForm(Form4);
-	Bureaucrat2.executeForm(Form4);
-	Bureaucrat2.executeForm(Form5);
+	try {
+		Bureaucrat1.executeForm(Form4);
+	} catch (std::exception &error) {
+		std::cout << error.what() << std::endl;
+	}
+	try {
+		Bureaucrat2.executeForm(Form4);
+	} catch (std::exception &error) {
+		std::cout << error.what() << std::endl;
+	}
+	try {
+		Bureaucrat2.executeForm(Form5);
+	} catch (std::exception &error) {
+		std::cout << error.what() << std::endl;
+	}
 
 	std::cout << Form4 << std::endl;
 	std::cout << Form5 << std::endl;
@@ -54,16 +118,48 @@ int main(void)
 	PresidentialPardonForm Form8("person2");
 	PresidentialPardonForm Form9("person3");
 
-	Form7.beSigned(Bureaucrat2);
-	Form7.beSigned(Bureaucrat1);
+	try {
+		Form7.beSigned(Bureaucrat2);
+	} catch (std::exception &error) {
+		std::cout << error.what() << std::endl;
+	}
+	try {
+		Form7.beSigned(Bureaucrat1);
+	} catch (std::exception &error) {
+		std::cout << error.what() << std::endl;
+	}
 
-	Form7.execute(Bureaucrat1);
-	Form7.execute(Bureaucrat2);
-	Form8.execute(Bureaucrat2);
+	try {
+		Form7.execute(Bureaucrat1);
+	} catch (std::exception &error) {
+		std::cout << error.what() << std::endl;
+	}
+	try {
+		Form7.execute(Bureaucrat2);
+	} catch (std::exception &error) {
+		std::cout << error.what() << std::endl;
+	}
+	try {
+		Form8.execute(Bureaucrat2);
+	} catch (std::exception &error) {
+		std::cout << error.what() << std::endl;
+	}
 
-	Bureaucrat1.executeForm(Form7);
-	Bureaucrat2.executeForm(Form7);
-	Bureaucrat2.executeForm(Form8);
+	try {
+		Bureaucrat1.executeForm(Form7);
+	} catch (std::exception &error) {
+		std::cout << error.what() << std::endl;
+	}
+	try {
+		Bureaucrat2.executeForm(Form7);
+	} catch (std::exception &error) {
+		std::cout << error.what() << std::endl;
+	}
+	try {
+		Bureaucrat2.executeForm(Form8);
+	} catch (std::exception &error) {
+		std::cout << error.what() << std::endl;
+	}
 
 	std::cout << Form7 << std::endl;
 	std::cout << Form8 << std::endl;
